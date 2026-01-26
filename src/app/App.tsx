@@ -22,43 +22,50 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen w-full bg-black text-white overflow-x-hidden flex flex-col">
+    <div className="min-h-screen w-full bg-background text-foreground overflow-x-hidden flex flex-col">
       <header className="absolute top-0 left-0 right-0 z-50 px-4 sm:px-6 md:px-8 py-4 md:py-6 flex justify-between items-center">
         <div className="text-lg sm:text-xl tracking-tight "></div>
-        <nav className="flex gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm ">
-          <button className="hover:opacity-70 transition-opacity text-gray-400">
-            contact
-          </button>
-        </nav>
       </header>
 
       <div className="flex-1 flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-16 pt-20 pb-16 md:pb-20">
         {/* Hero Text */}
-        <div className="mb-8 sm:mb-10 md:mb-12 flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 lg:gap-12">
+        <div className="mb-8 sm:mb-10 md:mb-12">
           <div className="flex flex-col gap-4 sm:gap-6">
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tighter leading-[0.75]">
               W.GREER
             </h1>
-            <span className="text-base sm:text-lg md:text-xl text-gray-400 font-mono lowercase">
-              Frontend Engineer, Phoenix
-            </span>
+            <div className="flex flex-col gap-2 sm:gap-3">
+              <span className="text-base sm:text-lg md:text-xl text-muted-foreground font-mono lowercase">
+                Frontend Engineer, Phoenix
+              </span>
+              <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-muted-foreground">
+                <span>React • TypeScript</span>
+                <span className="text-muted-foreground/60">•</span>
+                <span> Next.js</span>
+                <span className="text-muted-foreground/60">•</span>
+                <span className="text-green-600">Open to work</span>
+              </div>
+              <a
+                href="mailto:me@will-greer.com"
+                className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors w-fit"
+              >
+                me@will-greer.com
+              </a>
+            </div>
           </div>
-          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-md lg:text-right lowercase">
-            building thoughtful, accessible web experiences with React and
-            modern frontend tools.
-          </p>
-          {/* <p className="text-base sm:text-lg md:text-xl text-gray-400 max-w-2xl uppercase">
-            Frontend Developer
-            <br />
-          </p> */}
         </div>
 
+        {/* Summary */}
+        {/* <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl lowercase mb-8 sm:mb-10 md:mb-12">
+          building thoughtful, accessible web experiences with React and modern frontend tools.
+        </p> */}
+
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-7xl w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-7xl w-full">
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative aspect-[4/3] overflow-hidden bg-gray-900 cursor-pointer rounded-sm"
+              className="group relative aspect-[4/3] overflow-hidden bg-muted cursor-pointer rounded-sm"
             >
               <ImageWithFallback
                 src={project.image}
@@ -67,18 +74,18 @@ export default function App() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-100 group-hover:opacity-90 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent opacity-100 group-hover:opacity-90 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
-                  <div className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-400 mb-1 sm:mb-2">
+                  <div className="text-[10px] sm:text-xs uppercase tracking-widest text-background/70 mb-1 sm:mb-2">
                     {project.category}
                   </div>
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-tight mb-1 sm:mb-2 ">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl tracking-tight mb-1 sm:mb-2 text-background">
                     {project.title}
                   </h2>
-                  <p className="text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4 ">
+                  <p className="text-xs sm:text-sm text-background/80 mb-3 sm:mb-4 ">
                     {project.description}
                   </p>
-                  <button className="inline-flex items-center gap-2 text-xs sm:text-sm group-hover:gap-3 transition-all duration-300 cursor-pointer">
+                  <button className="inline-flex items-center gap-2 text-xs sm:text-sm text-background group-hover:gap-3 transition-all duration-300 cursor-pointer">
                     view case study
                     <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
                   </button>
@@ -90,13 +97,13 @@ export default function App() {
       </div>
 
       {/* Footer */}
-      <footer className="mt-auto px-4 sm:px-6 md:px-8 py-4 md:py-6 flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between items-center text-xs sm:text-sm text-gray-500">
+      <footer className="mt-auto px-4 sm:px-6 md:px-8 py-4 md:py-6 flex flex-col sm:flex-row gap-3 sm:gap-0 justify-between items-center text-xs sm:text-sm text-muted-foreground">
         <div className="order-2 sm:order-1">© 2026 W.G.</div>
         <div className="flex gap-4 sm:gap-6 order-1 sm:order-2">
-          <a href="#" className="hover:text-white transition-colors">
+          <a href="#" className="hover:text-foreground transition-colors">
             linkedin
           </a>
-          <a href="#" className="hover:text-white transition-colors">
+          <a href="#" className="hover:text-foreground transition-colors">
             github
           </a>
         </div>
