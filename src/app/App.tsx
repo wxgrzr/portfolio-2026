@@ -1,6 +1,6 @@
 import { ImageWithFallback } from "./components/figma/ImageWithFallback";
 import { ArrowUpRight, Mail } from "lucide-react";
-
+// TODO add social link URLS
 export default function App() {
   const projects = [
     {
@@ -45,12 +45,14 @@ export default function App() {
                     <a
                       href="#"
                       className="hover:text-foreground transition-colors"
+                      aria-label="LinkedIn profile"
                     >
                       linkedin
                     </a>
                     <a
                       href="#"
                       className="hover:text-foreground transition-colors"
+                      aria-label="GitHub profile"
                     >
                       github
                     </a>
@@ -84,11 +86,12 @@ export default function App() {
                   {...(project.url
                     ? {
                         href: project.url,
-                        rel: "noopener",
+                        rel: "noopener noreferrer",
                         target: "_blank",
+                        "aria-label": `Open ${project.title} project`,
                       }
                     : {})}
-                  className="group relative aspect-[4/3] overflow-hidden bg-muted cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-background/70 focus-visible:ring-offset-2 focus-visible:ring-offset-foreground"
+                  className="group relative aspect-[4/3] overflow-hidden bg-muted cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-muted"
                 >
                   <ImageWithFallback
                     src={project.image}
@@ -114,7 +117,10 @@ export default function App() {
                             <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </span>
                         ) : (
-                          <button className="inline-flex items-center gap-2 text-[11px] sm:text-xs text-background group-hover:gap-3 transition-all duration-300 cursor-pointer">
+                          <button
+                            type="button"
+                            className="inline-flex items-center gap-2 text-[11px] sm:text-xs text-background group-hover:gap-3 transition-all duration-300 cursor-pointer"
+                          >
                             View Case Study
                             <ArrowUpRight className="w-3 h-3 sm:w-4 sm:h-4" />
                           </button>
@@ -137,10 +143,18 @@ export default function App() {
         <footer className="mt-auto px-4 sm:px-6 md:px-8 pt-6 pb-10 md:pt-6 md:pb-10 flex items-center justify-between text-xxs sm:text-xs text-muted-foreground">
           <div className="uppercase text-[0.85em]">© 2026 W.G.</div>
           <div className="flex sm:hidden gap-4 text-xxs text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">
+            <a
+              href="#"
+              className="hover:text-foreground transition-colors"
+              aria-label="LinkedIn profile"
+            >
               linkedin
             </a>
-            <a href="#" className="hover:text-foreground transition-colors">
+            <a
+              href="#"
+              className="hover:text-foreground transition-colors"
+              aria-label="GitHub profile"
+            >
               github
             </a>
           </div>
