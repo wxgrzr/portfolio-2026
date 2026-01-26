@@ -43,18 +43,20 @@ export default function App() {
                   </span>
                   <div className="hidden sm:flex gap-4 sm:gap-6 text-xxs sm:text-xs text-muted-foreground text-right">
                     <a
-                      href="#"
-                      className="hover:text-foreground transition-colors"
+                      href="https://www.linkedin.com/in/willfromspace"
+                      className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
                       aria-label="LinkedIn profile"
                     >
                       linkedin
+                      <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
                     </a>
                     <a
-                      href="#"
-                      className="hover:text-foreground transition-colors"
+                      href="https://www.github.com/wxgrzr"
+                      className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
                       aria-label="GitHub profile"
                     >
                       github
+                      <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
                     </a>
                   </div>
                 </div>
@@ -145,17 +147,19 @@ export default function App() {
           <div className="flex sm:hidden gap-4 text-xxs text-muted-foreground">
             <a
               href="#"
-              className="hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
               aria-label="LinkedIn profile"
             >
               linkedin
+              <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
             </a>
             <a
               href="#"
-              className="hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
               aria-label="GitHub profile"
             >
               github
+              <ArrowUpRight className="h-3 w-3" aria-hidden="true" />
             </a>
           </div>
         </footer>
