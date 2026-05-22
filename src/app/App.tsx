@@ -61,11 +61,14 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex flex-wrap items-center gap-2 text-xxs sm:text-xs text-muted-foreground lowercase">
-                  <span>React • TypeScript</span>
-                  <span className="text-muted-foreground">•</span>
+                  {/* <span> */}
+                  React + TypeScript
+                  <span>•</span>
                   <span className="text-green-600 animate-soft-blink">
                     Open to work
                   </span>
+                  {/* </span> */}
+                  {/* <span className="text-muted-foreground">•</span> */}
                 </div>
               </div>
             </div>
