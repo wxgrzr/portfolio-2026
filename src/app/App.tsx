@@ -67,14 +67,6 @@ export default function App() {
                     Open to work
                   </span>
                 </div>
-                <a
-                  href="mailto:me@will-greer.com"
-                  className="inline-flex items-center gap-2 text-xxs sm:text-xs text-foreground underline underline-offset-4 decoration-foreground/40 hover:decoration-foreground transition-colors w-fit"
-                  aria-label="Email me"
-                >
-                  <Mail className="h-3.5 w-3.5" />
-                  me@will-greer.com
-                </a>
               </div>
             </div>
           </div>
